@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Sirawich_478"
 include(":app")
+include(":testjava")

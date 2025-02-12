@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Stamp</string>
+    <string name="user">Hazelrust</string>
+    <string name="pwd">123456</string>
+    <string name="song">Music Library</string>
+    <string name="photo">Share photos</string>
+    <string name="place">Place Location</string>
+    <string name="file">Contacts</string>
+    <string name="create">New contact</string>
+    <string name="open">Contact List</string>
 </resources>

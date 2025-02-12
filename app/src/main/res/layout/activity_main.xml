@@ -7,13 +7,26 @@
     android:layout_height="match_parent"
     android:background="@drawable/walls"
     tools:context=".MainActivity">
+    <!-- ToolBar widget -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0000FF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title=" Momo"
+        app:titleTextColor="@color/white" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginTop="328dp"
-        android:textColor="@color/white"
         android:text="รหัสผ่าน:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginTop="219dp"
-        android:textColor="@color/white"
         android:text="ชื่อผู้ใช้:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +46,6 @@
         android:layout_height="53dp"
         android:layout_marginTop="201dp"
         android:layout_marginEnd="60dp"
-        android:textColor="@color/white"
         android:ems="10"
         android:inputType="text"
         android:text="Name"
@@ -47,10 +58,8 @@
         android:layout_height="61dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="60dp"
-        android:textColor="@color/white"
         android:ems="10"
         android:hint="(0-9 เลข 6 หลัก)"
-        android:textColorHint="@color/white"
         android:inputType="numberPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
