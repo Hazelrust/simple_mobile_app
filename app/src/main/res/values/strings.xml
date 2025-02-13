@@ -8,4 +8,6 @@
     <string name="file">Contacts</string>
     <string name="create">New contact</string>
     <string name="open">Contact List</string>
+    <string name="add_contact_title" />
+    <string name="add_contact_message" />
 </resources>
