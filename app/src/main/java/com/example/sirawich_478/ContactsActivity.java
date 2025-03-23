@@ -5,11 +5,13 @@ import static android.content.ContentValues.TAG;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +20,7 @@ public class ContactsActivity extends Activity {
 
     private EditText contact_name, contact_address, contact_phone, contact_email, contact_note;
     private Button contact_save, contact_cancel;
+    ImageButton contact_back;
     private int ID = -1;
 //    private static final String TAG = "ContactsActivity";
 
@@ -34,9 +37,18 @@ public class ContactsActivity extends Activity {
         contact_note = findViewById(R.id.contact_note_editText);
         contact_save = findViewById(R.id.contact_save_button);
         contact_cancel = findViewById(R.id.contact_cancel_button);
+        contact_back = findViewById(R.id.contact_back_button);
 
         DBHelper mHelper = new DBHelper(this);
 
+        contact_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ContactsActivity.this, MainActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+            }
+        });
         contact_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +57,7 @@ public class ContactsActivity extends Activity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ContactsActivity.this);
                 builder.setTitle(getString(R.string.add_contact_title));
                 builder.setMessage(getString(R.string.add_contact_message));
+                builder.setMessage("Are you sure?\n\nเพิ่มรายชื่อนี้หรือไม่?");
                 //AlertDialog alert = builder.create();
                 //alert.show();
 

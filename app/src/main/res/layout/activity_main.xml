@@ -8,14 +8,32 @@
     android:background="@drawable/walls"
     tools:context=".MainActivity">
     <!-- ToolBar widget -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_power"
+        android:layout_width="60dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="4dp"
+        android:clickable="true"
+        android:contentDescription="ฺshut down"
+        android:outlineAmbientShadowColor="@color/DarkGray"
+        android:outlineSpotShadowColor="@color/DarkGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/icons8_back_50" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="412dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="52dp"
         android:background="#0000FF"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title=" Momo"

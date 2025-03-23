@@ -7,7 +7,7 @@ public class Contact {
     public static final int DATABASE_VERSION = 1;
     public static final String TABLE = "contact";
 
-    private int id;
+    private Integer id;
     private String name;
     private String address;
     private String tel;
@@ -27,7 +27,7 @@ public class Contact {
 
     }
     //Constructor
-    public Contact(int id, String name, String address, String tel,
+    public Contact(Integer id, String name, String address, String tel,
                    String email, String description) {
 
         this.id = id;
@@ -39,7 +39,7 @@ public class Contact {
 
     }
     //Getter, Setter
-    int getId(){
+    Integer getId(){
         return this.id;
     }
     String getName(){
@@ -57,14 +57,14 @@ public class Contact {
     String getDescription(){
         return this.description;
     }
-    void setId(int Id){
+    void setId(Integer Id){
         this.id = Id;
     }
     void setName(String Name){
         this.name = Name;
     }
     void setAddress(String Address){
-        this.name = Address;
+        this.address = Address;
     }
     void setTel(String tel){
         this.tel = tel;

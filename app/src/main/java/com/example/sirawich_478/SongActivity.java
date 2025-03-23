@@ -1,6 +1,7 @@
 package com.example.sirawich_478;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,12 +20,14 @@ public class SongActivity extends Activity {
     ArrayList<String> songList;
     ArrayAdapter songAdapter;
     int resId, songNo;
+    ImageButton song_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song);
         songListView = findViewById(R.id.contact_listview);
+        ImageButton song_back = (ImageButton) findViewById(R.id.song_back_button);
         ImageButton play = (ImageButton) findViewById(R.id.playButton);
         ImageButton stop = (ImageButton) findViewById(R.id.stopButton);
         songList = new ArrayList<String>();
@@ -32,6 +35,7 @@ public class SongActivity extends Activity {
         for (int i = 0; i < fields.length; i++) {
             songList.add(fields[i].getName());
         }
+
         songAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, songList);
 
         songListView.setAdapter(songAdapter);
@@ -66,6 +70,15 @@ public class SongActivity extends Activity {
                 }
                 songPlayer = MediaPlayer.create(SongActivity.this, resId);
                 songPlayer.start();
+            }
+        });
+        song_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SongActivity.this, MainActivity.class);
+                // set the new task and clear flags
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
             }
         });
 

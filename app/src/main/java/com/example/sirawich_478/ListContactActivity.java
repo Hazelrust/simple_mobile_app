@@ -23,8 +23,8 @@ public class ListContactActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listcontact);
-        buttonBack = (ImageButton) findViewById(R.id.contact_list_button_back);
-        listVw = (ListView) findViewById(R.id.contact_listview);
+        buttonBack = findViewById(R.id.contact_list_button_back);
+        listVw = findViewById(R.id.contact_listview);
         mHelper = new DBHelper(this);
         contacts = mHelper.getContactList();
         //listView = (ListView) findViewById(android.R.id.list);

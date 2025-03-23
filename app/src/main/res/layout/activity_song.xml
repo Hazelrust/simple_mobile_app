@@ -8,9 +8,9 @@
     <ListView
         android:id="@+id/contact_listview"
         android:layout_width="409dp"
-        android:layout_height="550dp"
+        android:layout_height="500dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="140dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,18 +19,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/contact_list_button_back"
+        android:id="@+id/song_back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="76dp"
         android:clickable="true"
         android:contentDescription="back to previous page"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="31dp" />
+        app:srcCompat="@drawable/back" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/playButton"

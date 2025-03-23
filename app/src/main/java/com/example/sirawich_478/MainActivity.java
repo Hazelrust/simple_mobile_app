@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText name, password;
     Button submit;
     String s_name, s_password, userinfo, user, pwd, welcomeMsg;
+    ImageButton end_app;
 
 
     @Override
@@ -27,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        name = (EditText) findViewById(R.id.editTextText);
-        password = (EditText) findViewById(R.id.editTextNumberPassword);
+        name = findViewById(R.id.editTextText);
+        password = findViewById(R.id.editTextNumberPassword);
         user = getString(R.string.user);
         pwd = getString(R.string.pwd);
-        submit = (Button) findViewById(R.id.button);
+        submit = findViewById(R.id.button);
         submit.setOnClickListener(v -> {
             if (name.getText().toString().isEmpty() || password.getText().toString().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Enter the Data", Toast.LENGTH_SHORT).show();
@@ -49,6 +52,13 @@ public class MainActivity extends AppCompatActivity {
             Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(mToolbar);
 
+        });
+        end_app = (ImageButton) findViewById(R.id.button_power);
+        end_app.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishAndRemoveTask();
+            }
         });
 
     }
@@ -68,25 +78,49 @@ public class MainActivity extends AppCompatActivity {
         else if (item.getItemId() == R.id.photo)
             share_();
         else if (item.getItemId()== R.id.search)
-            search_();
-        else if (item.getItemId() == R.id.file)
-            file_();
+            location_();
         else if (item.getItemId() == R.id.create)
-            create_();
+        {
+            create_(); return true;
+        }
+        else if (item.getItemId() == R.id.open)
+        { open_();    return true;}
+
+//        else if (item.getItemId() == R.id.contact)
+//
+/*
+       else if (item.getItemId() == R.id.file)
+            file_();
         else if (item.getItemId() == R.id.open)
             open_();
+*/
         return true;
     }
     private void song_(){
+        Intent intent = new Intent(MainActivity.this, SongActivity.class);
+        startActivity(intent);
     }
     private void share_(){
     }
-    private void search_(){
+    private void location_(){
+    }
+    private void create_(){
+        Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
+        startActivity(intent);
+    }
+    private void open_(){
+        Intent intent = new Intent(MainActivity.this, ListContactActivity.class);
+        startActivity(intent);
+    }
+    /*    private void contact_() {
+        Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
+        startActivity(intent);
+    }
+
+    private void open_(){
     }
     private void file_(){
     }
-    private void create_(){
-    }
-    private void open_(){
-    }
+*/
+
 }

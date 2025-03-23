@@ -44,29 +44,62 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public List<String> getContactList() {
-        List<String> contacts = new ArrayList<String>();
+//    public List<String> getContactList() {
+//        List<String> contacts = new ArrayList<>();
+//
+//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//
+//        Cursor cursor = sqLiteDatabase.query
+//                (Contact.TABLE, null, null, null, null, null, null);
+//
+//        if (cursor != null) {
+//            cursor.moveToFirst();
+//        }
+//
+//        while (!cursor.isAfterLast()) {
+//
+//            contacts.add(cursor.getLong(0) + " " +
+//                    cursor.getString(1) + " " +
+//                    cursor.getString(2));
+//
+//            cursor.moveToNext();
+//        }
+//        sqLiteDatabase.close();
+//        return contacts;
+//    }
+public List<String> getContactList() {
+    List<String> contacts = new ArrayList<>();
 
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+    SQLiteDatabase db = this.getReadableDatabase();
+    Cursor cursor = db.query(Contact.TABLE, null, null, null, null, null, null);
 
-        Cursor cursor = sqLiteDatabase.query
-                (Contact.TABLE, null, null, null, null, null, null);
+    // Make sure the cursor has data
+    if (cursor != null && cursor.moveToFirst()) {
+        do {
+            // 0: ID, 1: NAME, 2: ADDRESS, 3: TEL, 4: EMAIL, 5: DESCRIPTION
+            long id         = cursor.getLong(0);
+            String name     = cursor.getString(1);
+            String address  = cursor.getString(2);
+            String tel      = cursor.getString(3);
+            String email    = cursor.getString(4);
+            // String desc  = cursor.getString(5); // If needed
 
-        if (cursor != null) {
-            cursor.moveToFirst();
-        }
+            // Format the string exactly how you want:
+            // Example: "Nhong Sornwit 0927824422 sornwit@gmail.com"
+            String line = name + " " + address + " " + tel + " " + email;
 
-        while (!cursor.isAfterLast()) {
-
-            contacts.add(cursor.getLong(0) + " " +
-                    cursor.getString(1) + " " +
-                    cursor.getString(2));
-
-            cursor.moveToNext();
-        }
-        sqLiteDatabase.close();
-        return contacts;
+            contacts.add(line);
+        } while (cursor.moveToNext());
     }
+
+    if (cursor != null) {
+        cursor.close();
+    }
+    db.close();
+
+    return contacts;
+}
+
 
     public void addContact(Contact contact) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();

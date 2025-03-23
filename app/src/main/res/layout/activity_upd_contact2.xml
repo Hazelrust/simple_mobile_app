@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <EditText
-        android:id="@+id/contact_note_editText"
+        android:id="@+id/contactupd2_note_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="469dp"
@@ -19,7 +19,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/contact_note_textView"
+        android:id="@+id/contactupd2_note_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/contact_email_editText"
+        android:id="@+id/contactupd2_email_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="401dp"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/contact_email_textView"
+        android:id="@+id/contactupd2_email_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/contact_phone_editText"
+        android:id="@+id/contactupd2_phone_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="328dp"
@@ -64,7 +64,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/contact_phone_textView"
+        android:id="@+id/contactupd2_phone_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/contact_address_editText"
+        android:id="@+id/contactupd2_address_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="242dp"
@@ -87,7 +87,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/contact_address_textView"
+        android:id="@+id/contactupd2_address_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -108,7 +108,7 @@
         app:srcCompat="@drawable/icons8_gallery_48" />
 
     <TextView
-        android:id="@+id/contact_name_viewText"
+        android:id="@+id/contactupd2_name_viewText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/contact_name_editText"
+        android:id="@+id/contactupd2_name_editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="163dp"
@@ -131,37 +131,24 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/contact_save_button"
+        android:id="@+id/contactupd2_save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="98dp"
         android:layout_marginTop="645dp"
-        android:text="Save"
+        android:text="Update"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/contact_cancel_button"
+        android:id="@+id/contactupd2_cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="644dp"
         android:layout_marginEnd="88dp"
-        android:text="CANCEL"
+        android:text="Delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/contact_back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:clickable="true"
-        android:contentDescription="back to previous page"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back"
-        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
